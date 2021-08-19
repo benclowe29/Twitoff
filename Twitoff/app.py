@@ -8,7 +8,7 @@ import os
 # creates application
 def create_app():
 
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder='templates/')
 
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
