@@ -7,8 +7,8 @@ import os
 
 # creates application
 def create_app():
-
-    app = Flask(__name__, template_folder='templates/')
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    app = Flask(__name__, template_folder=dir_path + 'templates/')
     app.config['DEBUG'] = True
     app.config['EXPLAIN_TEMPLATE_LOADING'] = True
 
