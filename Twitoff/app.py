@@ -9,6 +9,8 @@ import os
 def create_app():
 
     app = Flask(__name__, template_folder='templates/')
+    app.config['DEBUG'] = True
+    app.config['EXPLAIN_TEMPLATE_LOADING'] = True
 
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
